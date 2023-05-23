@@ -1,0 +1,165 @@
+﻿
+@{
+    ViewBag.Title = "SuaNguoiDung";
+}
+
+@using MonNgonTaiNha.Models
+
+@model MonNgonTaiNha.Areas.Admin.Controllers.NguoiDungForm
+
+@{
+    MonNgonTaiNhaEntities db = new MonNgonTaiNhaEntities();
+
+    var nd = ViewBag.ndModel as NGUOIDUNG;
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <form id="myForm" method="post" action="/Admin/NguoiDung/Them" enctype="multipart/form-data">
+                <div class="flex-md-row">
+                    <div class="iq-card">
+                        <div class="iq-card-header d-flex justify-content-between">
+                            <div class="iq-header-title">
+                                <h4 class="card-title">Chỉnh sửa thông tin người dùng</h4>
+                            </div>
+                        </div>
+                        <div class="iq-card-body">
+
+                            <div class="form-group">
+                                <div class="add-img-user profile-img-edit">
+                                    <img class="profile-pic img-fluid" src="images/user/11.png" alt="profile-pic">
+                                    <div class="p-image">
+                                        <a href="javascript:void();" class="upload-button btn iq-bg-primary">File Upload</a>
+                                        <input class="file-upload" type="file" value="@nd.anhDaiDien" accept="image/*" name="AnhDaiDien">
+                                    </div>
+                                </div>
+                                <div class="img-extension mt-3">
+                                    <div class="d-inline-block align-items-center">
+                                        <span>Only</span>
+                                        <a href="javascript:void();">.jpg</a>
+                                        <a href="javascript:void();">.png</a>
+                                        <a href="javascript:void();">.jpeg</a>
+                                        <span>allowed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Quyền:</label>
+                                <select class="form-control" id="selectuserrole" name="Quyen">
+                                    @*@foreach (QUYENTRUYCAP q in quyen)
+                                        {
+                                            <option value="@q.idQuyen" @if (@Item2.idQuyen == q.idQuyen) { <text> selected</text> }> @q.tenQuyen : @q.moTa</option>
+                                        }*@
+
+                                </select>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-md-row">
+                    <div class="iq-card">
+                        <div class="iq-card-header d-flex justify-content-between">
+                            <div class="iq-header-title">
+                                <h4 class="card-title">Thông tin người dùng </h4>
+                            </div>
+                        </div>
+                        <div class="iq-card-body">
+                            <div class="new-user-info">
+
+                                <div class="row">
+
+
+                                    <div class="form-group col-md-12">
+                                        <label for="uname">Tên đăng nhập:</label>
+                                        <input type="text" class="form-control" id="uname" value="@nd.tenDangNhap" placeholder="Tên đăng nhập" name="TenDangNhap">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="pass">Mật khẩu:</label>
+                                        <input type="password" class="form-control" id="pass" value="@nd.matKhau" placeholder="Mật khẩu" name="MatKhau">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="rpass">Nhập lại mật khẩu:</label>
+                                        <input type="password" class="form-control" id="rpass" placeholder="Nhập lại mật khẩu" name="NhapLaiMatKhau">
+                                    </div>
+
+
+                                    <div class="form-group col-md-12">
+                                        <label for="fname">Họ tên:</label>
+                                        <input type="text" class="form-control" id="fname" placeholder="Họ tên" value="@nd.hoTen" name="HoTen">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="add1">Địa chỉ:</label>
+                                        <input type="text" class="form-control" id="add1" placeholder="Địa chỉ" value="@nd.diaChi.Split(char.Parse(" - "))[0]" name="DiaChi">
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label>Country:</label>
+                                        <select class="form-control" id="selectcountry" name="TinhThanh">
+                                            <option value="Đà Nẵng" @if (@nd.diaChi.Split(char.Parse(" - "))[0] == "Đà Nẵng") { <text> selected </text> } )>Đà Nẵng</option>
+                                            <option value="Hà Nội" @if (@nd.diaChi.Split(char.Parse(" - "))[0] == "Hà Nội") { <text> selected </text> } )>Hà Nội</option>
+                                            <option value="TP-HCM" @if (@nd.diaChi.Split(char.Parse(" - "))[0] == "TP-HCM") { <text> selected </text> } )>TP-HCM</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="mobno">Số điện thoại:</label>
+                                        <input type="text" class="form-control" id="mobno" placeholder="Số điện thoại" name="SoDienThoai">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="altconno">Số CMND</label>
+                                        <input type="text" class="form-control" id="altconno" placeholder="Số CMND" value="@nd.soCMND" name="SoCMND">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="add1">Ngày sinh:</label>
+                                        <input type="date" class="form-control" id="add1" value="@nd.ngaySinh" name="NgaySinh">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Email" name="Email">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Số tài khoản:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Số tài khoản" value="@nd.soTaiKhoan" name="SoTaiKhoan">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Ngân hàng:</label>
+
+
+                                        <select class="form-control" id="selectuserrole" name="NganHang">
+                                            @*@foreach (var q in nganHang)
+                                                {
+                                                    <option value="@q.idTaiKhoan" @if (@nd.idTaiKhoan == q.idTaiKhoan) { <text> selected </text> } )> @q.tenNganHang</option>
+                                                }*@
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Sửa người dùng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Sửa người dùng thành công
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

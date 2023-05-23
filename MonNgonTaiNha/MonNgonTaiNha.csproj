@@ -1,0 +1,1216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46E5663A-C868-49B3-A561-29153D06C4A6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MonNgonTaiNha</RootNamespace>
+    <AssemblyName>MonNgonTaiNha</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44349</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaiVietController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DanhMucController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomePageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NguoiDungController.cs" />
+    <Compile Include="Areas\Client\ClientAreaRegistration.cs" />
+    <Compile Include="Areas\Client\Controllers\HomeClientController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BAIDANG.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BAIVIET.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BAOCAOVIPHAM.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BINHLUAN.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CACHLAM.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHITIETCONGTHUC.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHUNGCHI.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CONGTHUC.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DANHGIA.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DANHMUC.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonNgonTaiNha.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonNgonTaiNha.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonNgonTaiNha.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonNgonTaiNha.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonNgonTaiNha.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NGUOIDUNG.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NGUYENLIEU.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QUYENTRUYCAP.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TAIKHOANNGANHANG.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TINHTRANG.cs">
+      <DependentUpon>MonNgonTaiNha.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuLyAnh\XuLyAnh.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Admin\app\email-compose.html" />
+    <Content Include="Content\Admin\app\index-email.html" />
+    <Content Include="Content\Admin\app\index.html" />
+    <Content Include="Content\Admin\css\ajax-loader.gif" />
+    <Content Include="Content\Admin\css\animate.css" />
+    <Content Include="Content\Admin\css\bootstrap.min.css" />
+    <Content Include="Content\Admin\css\calender.css" />
+    <Content Include="Content\Admin\css\Chart.min.css" />
+    <Content Include="Content\Admin\css\developer.css" />
+    <Content Include="Content\Admin\css\dripicons.css" />
+    <Content Include="Content\Admin\css\Ecommerce.css" />
+    <Content Include="Content\Admin\css\EcommerceResponsive.css" />
+    <Content Include="Content\Admin\css\floatingbutton.css" />
+    <Content Include="Content\Admin\css\fontawesome.css" />
+    <Content Include="Content\Admin\css\ionicons.min.css" />
+    <Content Include="Content\Admin\css\line-awesome.min.css" />
+    <Content Include="Content\Admin\css\magnific-popup.css" />
+    <Content Include="Content\Admin\css\owl.carousel.min.css" />
+    <Content Include="Content\Admin\css\owl.video.play.png" />
+    <Content Include="Content\Admin\css\remixicon.css" />
+    <Content Include="Content\Admin\css\responsive.css" />
+    <Content Include="Content\Admin\css\select2.min.css" />
+    <Content Include="Content\Admin\css\slick-theme.css" />
+    <Content Include="Content\Admin\css\slick.css" />
+    <Content Include="Content\Admin\css\spacer.css" />
+    <Content Include="Content\Admin\css\style.css" />
+    <Content Include="Content\Admin\css\swiper-bundle.min.css" />
+    <Content Include="Content\Admin\css\table.css" />
+    <Content Include="Content\Admin\css\typography-dark.css" />
+    <Content Include="Content\Admin\css\typography-rtl.css" />
+    <Content Include="Content\Admin\css\typography.css" />
+    <Content Include="Content\Admin\css\variable.css" />
+    <Content Include="Content\Admin\fonts\dripicons-v2.svg" />
+    <Content Include="Content\Admin\fonts\fa-brands-400.svg" />
+    <Content Include="Content\Admin\fonts\fa-regular-400.svg" />
+    <Content Include="Content\Admin\fonts\fa-solid-900.svg" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Admin\fonts\ionicons.svg" />
+    <Content Include="Content\Admin\fonts\la-brands-400.svg" />
+    <Content Include="Content\Admin\fonts\la-regular-400.svg" />
+    <Content Include="Content\Admin\fonts\la-solid-900.svg" />
+    <Content Include="Content\Admin\fonts\remixicon.svg" />
+    <Content Include="Content\Admin\fonts\slick.svg" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\main.css" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\main.js" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\main.min.css" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\core\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\core\locales-all.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales-all.min.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\af.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-dz.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-kw.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-ly.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-ma.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-sa.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar-tn.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ar.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\bg.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\bs.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ca.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\cs.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\da.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\de.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\el.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\en-au.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\en-gb.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\en-nz.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\es-us.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\es.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\et.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\eu.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\fa.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\fi.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\fr-ca.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\fr-ch.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\fr.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\gl.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\he.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\hi.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\hr.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\hu.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\id.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\is.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\it.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ja.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ka.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\kk.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ko.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\lb.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\lt.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\lv.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\mk.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ms.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\nb.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\nl.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\nn.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\pl.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\pt-br.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\pt.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ro.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\ru.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sk.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sl.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sq.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sr-cyrl.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sr.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\sv.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\th.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\tr.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\uk.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\vi.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\zh-cn.js" />
+    <Content Include="Content\Admin\fullcalendar\core\locales\zh-tw.js" />
+    <Content Include="Content\Admin\fullcalendar\core\main.css" />
+    <Content Include="Content\Admin\fullcalendar\core\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\core\main.js" />
+    <Content Include="Content\Admin\fullcalendar\core\main.min.css" />
+    <Content Include="Content\Admin\fullcalendar\core\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\main.css" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\main.js" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\main.min.css" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\main.js" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\interaction\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\interaction\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\interaction\main.js" />
+    <Content Include="Content\Admin\fullcalendar\interaction\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\list\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\list\main.css" />
+    <Content Include="Content\Admin\fullcalendar\list\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\list\main.js" />
+    <Content Include="Content\Admin\fullcalendar\list\main.min.css" />
+    <Content Include="Content\Admin\fullcalendar\list\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\luxon\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\luxon\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\luxon\main.js" />
+    <Content Include="Content\Admin\fullcalendar\luxon\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\main.js" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\moment\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\moment\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\moment\main.js" />
+    <Content Include="Content\Admin\fullcalendar\moment\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\rrule\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\rrule\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\rrule\main.js" />
+    <Content Include="Content\Admin\fullcalendar\rrule\main.min.js" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\LICENSE.txt" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\main.css" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\main.esm.js" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\main.js" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\main.min.css" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\main.min.js" />
+    <Content Include="Content\Admin\images\14.jpg" />
+    <Content Include="Content\Admin\images\bg-03.jpg" />
+    <Content Include="Content\Admin\images\booking\01.png" />
+    <Content Include="Content\Admin\images\booking\02.jpg" />
+    <Content Include="Content\Admin\images\booking\03.png" />
+    <Content Include="Content\Admin\images\booking\cart.png" />
+    <Content Include="Content\Admin\images\booking\seat.svg" />
+    <Content Include="Content\Admin\images\error\01.png" />
+    <Content Include="Content\Admin\images\error\02.png" />
+    <Content Include="Content\Admin\images\error\03.png" />
+    <Content Include="Content\Admin\images\favicon.ico" />
+    <Content Include="Content\Admin\images\icon\entire-page.png" />
+    <Content Include="Content\Admin\images\index.jpeg" />
+    <Content Include="Content\Admin\images\loader.gif" />
+    <Content Include="Content\Admin\images\login\1.png" />
+    <Content Include="Content\Admin\images\login\2.jpg" />
+    <Content Include="Content\Admin\images\login\mail.png" />
+    <Content Include="Content\Admin\images\logo-1.png" />
+    <Content Include="Content\Admin\images\logo-2.png" />
+    <Content Include="Content\Admin\images\logo-dark.gif" />
+    <Content Include="Content\Admin\images\logo-full.gif" />
+    <Content Include="Content\Admin\images\logo-full.png" />
+    <Content Include="Content\Admin\images\logo-full2.png" />
+    <Content Include="Content\Admin\images\logo-white.png" />
+    <Content Include="Content\Admin\images\logo-white1.png" />
+    <Content Include="Content\Admin\images\logo.gif" />
+    <Content Include="Content\Admin\images\page-img\01.jpg" />
+    <Content Include="Content\Admin\images\page-img\01.png" />
+    <Content Include="Content\Admin\images\page-img\02.jpg" />
+    <Content Include="Content\Admin\images\page-img\03.jpg" />
+    <Content Include="Content\Admin\images\page-img\04.png" />
+    <Content Include="Content\Admin\images\page-img\05.png" />
+    <Content Include="Content\Admin\images\page-img\06.png" />
+    <Content Include="Content\Admin\images\page-img\07.jpg" />
+    <Content Include="Content\Admin\images\page-img\08.jpg" />
+    <Content Include="Content\Admin\images\page-img\09.jpg" />
+    <Content Include="Content\Admin\images\page-img\10.jpg" />
+    <Content Include="Content\Admin\images\page-img\100.jpg" />
+    <Content Include="Content\Admin\images\page-img\11.jpg" />
+    <Content Include="Content\Admin\images\page-img\12.jpg" />
+    <Content Include="Content\Admin\images\page-img\13.jpg" />
+    <Content Include="Content\Admin\images\page-img\14.jpg" />
+    <Content Include="Content\Admin\images\page-img\15.jpg" />
+    <Content Include="Content\Admin\images\page-img\16.jpg" />
+    <Content Include="Content\Admin\images\page-img\17.jpg" />
+    <Content Include="Content\Admin\images\page-img\18.jpg" />
+    <Content Include="Content\Admin\images\page-img\19.jpg" />
+    <Content Include="Content\Admin\images\page-img\20.jpg" />
+    <Content Include="Content\Admin\images\page-img\21.jpg" />
+    <Content Include="Content\Admin\images\page-img\22.jpg" />
+    <Content Include="Content\Admin\images\page-img\23.jpg" />
+    <Content Include="Content\Admin\images\page-img\24.jpg" />
+    <Content Include="Content\Admin\images\page-img\25.jpg" />
+    <Content Include="Content\Admin\images\page-img\26.jpg" />
+    <Content Include="Content\Admin\images\page-img\27.jpg" />
+    <Content Include="Content\Admin\images\page-img\28.jpg" />
+    <Content Include="Content\Admin\images\page-img\29.png" />
+    <Content Include="Content\Admin\images\page-img\30.png" />
+    <Content Include="Content\Admin\images\page-img\31.png" />
+    <Content Include="Content\Admin\images\page-img\32.png" />
+    <Content Include="Content\Admin\images\page-img\33.png" />
+    <Content Include="Content\Admin\images\page-img\34.png" />
+    <Content Include="Content\Admin\images\page-img\35.png" />
+    <Content Include="Content\Admin\images\page-img\36.png" />
+    <Content Include="Content\Admin\images\page-img\37.png" />
+    <Content Include="Content\Admin\images\page-img\38.png" />
+    <Content Include="Content\Admin\images\page-img\39.png" />
+    <Content Include="Content\Admin\images\page-img\40.png" />
+    <Content Include="Content\Admin\images\page-img\41.png" />
+    <Content Include="Content\Admin\images\page-img\42.jpg" />
+    <Content Include="Content\Admin\images\page-img\43.jpg" />
+    <Content Include="Content\Admin\images\page-img\44.jpg" />
+    <Content Include="Content\Admin\images\page-img\45.jpg" />
+    <Content Include="Content\Admin\images\page-img\46.jpg" />
+    <Content Include="Content\Admin\images\page-img\47.jpg" />
+    <Content Include="Content\Admin\images\page-img\48.jpg" />
+    <Content Include="Content\Admin\images\page-img\49.jpg" />
+    <Content Include="Content\Admin\images\page-img\car.png" />
+    <Content Include="Content\Admin\images\page-img\g1.jpg" />
+    <Content Include="Content\Admin\images\page-img\g2.jpg" />
+    <Content Include="Content\Admin\images\page-img\g3.jpg" />
+    <Content Include="Content\Admin\images\page-img\g4.jpg" />
+    <Content Include="Content\Admin\images\page-img\g5.jpg" />
+    <Content Include="Content\Admin\images\page-img\g6.jpg" />
+    <Content Include="Content\Admin\images\page-img\g7.jpg" />
+    <Content Include="Content\Admin\images\page-img\g8.jpg" />
+    <Content Include="Content\Admin\images\page-img\g9.jpg" />
+    <Content Include="Content\Admin\images\page-img\img-success.png" />
+    <Content Include="Content\Admin\images\page-img\man.svg" />
+    <Content Include="Content\Admin\images\page-img\p-2.jpg" />
+    <Content Include="Content\Admin\images\page-img\p-3.jpg" />
+    <Content Include="Content\Admin\images\page-img\p-4.jpg" />
+    <Content Include="Content\Admin\images\page-img\p-5.jpg" />
+    <Content Include="Content\Admin\images\page-img\p1.jpg" />
+    <Content Include="Content\Admin\images\page-img\profile-bg.jpg" />
+    <Content Include="Content\Admin\images\page-img\s1.jpg" />
+    <Content Include="Content\Admin\images\page-img\s2.jpg" />
+    <Content Include="Content\Admin\images\page-img\s3.jpg" />
+    <Content Include="Content\Admin\images\page-img\scoter.png" />
+    <Content Include="Content\Admin\images\page-img\tag_blue.svg" />
+    <Content Include="Content\Admin\images\page-img\tag_red.svg" />
+    <Content Include="Content\Admin\images\page-img\truck.png" />
+    <Content Include="Content\Admin\images\pdf.svg" />
+    <Content Include="Content\Admin\images\project-icon.png" />
+    <Content Include="Content\Admin\images\screen.jpg" />
+    <Content Include="Content\Admin\images\screen.png" />
+    <Content Include="Content\Admin\images\small\04.svg" />
+    <Content Include="Content\Admin\images\small\05.svg" />
+    <Content Include="Content\Admin\images\small\flag-01.png" />
+    <Content Include="Content\Admin\images\small\flag-02.png" />
+    <Content Include="Content\Admin\images\small\flag-03.png" />
+    <Content Include="Content\Admin\images\small\flag-04.png" />
+    <Content Include="Content\Admin\images\small\flag-05.png" />
+    <Content Include="Content\Admin\images\small\flag-06.png" />
+    <Content Include="Content\Admin\images\small\img-1.jpg" />
+    <Content Include="Content\Admin\images\small\jpg.svg" />
+    <Content Include="Content\Admin\images\small\xml.svg" />
+    <Content Include="Content\Admin\images\small\zip.svg" />
+    <Content Include="Content\Admin\images\user\01.jpg" />
+    <Content Include="Content\Admin\images\user\02.jpg" />
+    <Content Include="Content\Admin\images\user\03.jpg" />
+    <Content Include="Content\Admin\images\user\04.jpg" />
+    <Content Include="Content\Admin\images\user\05.jpg" />
+    <Content Include="Content\Admin\images\user\06.jpg" />
+    <Content Include="Content\Admin\images\user\07.jpg" />
+    <Content Include="Content\Admin\images\user\08.jpg" />
+    <Content Include="Content\Admin\images\user\09.jpg" />
+    <Content Include="Content\Admin\images\user\1.jpg" />
+    <Content Include="Content\Admin\images\user\10.jpg" />
+    <Content Include="Content\Admin\images\user\11.png" />
+    <Content Include="Content\Admin\images\user\uder-5.jpg" />
+    <Content Include="Content\Admin\images\user\user-1.jpg" />
+    <Content Include="Content\Admin\images\user\user-2.jpg" />
+    <Content Include="Content\Admin\images\user\user-3.jpg" />
+    <Content Include="Content\Admin\images\user\user-4.jpg" />
+    <Content Include="Content\Admin\images\user\user-5.jpg" />
+    <Content Include="Content\Admin\images\user\user-6.jpg" />
+    <Content Include="Content\Admin\js\algolia.js" />
+    <Content Include="Content\Admin\js\algoliasearchLite.min.js" />
+    <Content Include="Content\Admin\js\animated.js" />
+    <Content Include="Content\Admin\js\apexcharts.js" />
+    <Content Include="Content\Admin\js\bodymovin.js" />
+    <Content Include="Content\Admin\js\bootstrap.min.js" />
+    <Content Include="Content\Admin\js\chart-custom.js" />
+    <Content Include="Content\Admin\js\chartist\chartist.css" />
+    <Content Include="Content\Admin\js\chartist\chartist.js" />
+    <Content Include="Content\Admin\js\chartist\chartist.min.css" />
+    <Content Include="Content\Admin\js\chartist\chartist.min.js" />
+    <Content Include="Content\Admin\js\charts.js" />
+    <Content Include="Content\Admin\js\core.js" />
+    <Content Include="Content\Admin\js\countdown.min.js" />
+    <Content Include="Content\Admin\js\custom.js" />
+    <Content Include="Content\Admin\js\customizer.js" />
+    <Content Include="Content\Admin\js\highcharts-3d.js" />
+    <Content Include="Content\Admin\js\highcharts-more.js" />
+    <Content Include="Content\Admin\js\highcharts.js" />
+    <Content Include="Content\Admin\js\instantsearch.js" />
+    <Content Include="Content\Admin\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\Admin\js\jquery.appear.js" />
+    <Content Include="Content\Admin\js\jquery.counterup.min.js" />
+    <Content Include="Content\Admin\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\Admin\js\jquery.min.js" />
+    <Content Include="Content\Admin\js\kelly.js" />
+    <Content Include="Content\Admin\js\lottie.js" />
+    <Content Include="Content\Admin\js\maps.js" />
+    <Content Include="Content\Admin\js\morris.js" />
+    <Content Include="Content\Admin\js\morris.min.js" />
+    <Content Include="Content\Admin\js\owl.carousel.min.js" />
+    <Content Include="Content\Admin\js\popper.min.js" />
+    <Content Include="Content\Admin\js\progressbar.js" />
+    <Content Include="Content\Admin\js\raphael-min.js" />
+    <Content Include="Content\Admin\js\rtl.js" />
+    <Content Include="Content\Admin\js\select2.min.js" />
+    <Content Include="Content\Admin\js\slick.min.js" />
+    <Content Include="Content\Admin\js\slider.js" />
+    <Content Include="Content\Admin\js\smooth-scrollbar.js" />
+    <Content Include="Content\Admin\js\swiper.min.js" />
+    <Content Include="Content\Admin\js\waypoints.min.js" />
+    <Content Include="Content\Admin\js\worldLow.js" />
+    <Content Include="Content\Admin\js\wow.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Client\app\email-compose.html" />
+    <Content Include="Content\Client\app\index-email.html" />
+    <Content Include="Content\Client\app\index.html" />
+    <Content Include="Content\Client\css\ajax-loader.gif" />
+    <Content Include="Content\Client\css\animate.css" />
+    <Content Include="Content\Client\css\bootstrap.min.css" />
+    <Content Include="Content\Client\css\calender.css" />
+    <Content Include="Content\Client\css\Chart.min.css" />
+    <Content Include="Content\Client\css\developer.css" />
+    <Content Include="Content\Client\css\dripicons.css" />
+    <Content Include="Content\Client\css\Ecommerce.css" />
+    <Content Include="Content\Client\css\EcommerceResponsive.css" />
+    <Content Include="Content\Client\css\floatingbutton.css" />
+    <Content Include="Content\Client\css\fontawesome.css" />
+    <Content Include="Content\Client\css\ionicons.min.css" />
+    <Content Include="Content\Client\css\line-awesome.min.css" />
+    <Content Include="Content\Client\css\magnific-popup.css" />
+    <Content Include="Content\Client\css\owl.carousel.min.css" />
+    <Content Include="Content\Client\css\owl.video.play.png" />
+    <Content Include="Content\Client\css\remixicon.css" />
+    <Content Include="Content\Client\css\responsive.css" />
+    <Content Include="Content\Client\css\select2.min.css" />
+    <Content Include="Content\Client\css\slick-theme.css" />
+    <Content Include="Content\Client\css\slick.css" />
+    <Content Include="Content\Client\css\spacer.css" />
+    <Content Include="Content\Client\css\style.css" />
+    <Content Include="Content\Client\css\swiper-bundle.min.css" />
+    <Content Include="Content\Client\css\table.css" />
+    <Content Include="Content\Client\css\typography-dark.css" />
+    <Content Include="Content\Client\css\typography-rtl.css" />
+    <Content Include="Content\Client\css\typography.css" />
+    <Content Include="Content\Client\css\variable.css" />
+    <Content Include="Content\Client\fonts\dripicons-v2.svg" />
+    <Content Include="Content\Client\fonts\fa-brands-400.svg" />
+    <Content Include="Content\Client\fonts\fa-regular-400.svg" />
+    <Content Include="Content\Client\fonts\fa-solid-900.svg" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Client\fonts\ionicons.svg" />
+    <Content Include="Content\Client\fonts\la-brands-400.svg" />
+    <Content Include="Content\Client\fonts\la-regular-400.svg" />
+    <Content Include="Content\Client\fonts\la-solid-900.svg" />
+    <Content Include="Content\Client\fonts\remixicon.svg" />
+    <Content Include="Content\Client\fonts\slick.svg" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\main.css" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\main.js" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\main.min.css" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\core\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\core\locales-all.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales-all.min.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\af.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-dz.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-kw.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-ly.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-ma.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-sa.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar-tn.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ar.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\bg.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\bs.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ca.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\cs.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\da.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\de.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\el.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\en-au.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\en-gb.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\en-nz.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\es-us.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\es.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\et.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\eu.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\fa.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\fi.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\fr-ca.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\fr-ch.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\fr.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\gl.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\he.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\hi.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\hr.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\hu.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\id.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\is.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\it.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ja.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ka.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\kk.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ko.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\lb.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\lt.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\lv.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\mk.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ms.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\nb.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\nl.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\nn.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\pl.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\pt-br.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\pt.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ro.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\ru.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sk.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sl.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sq.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sr-cyrl.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sr.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\sv.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\th.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\tr.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\uk.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\vi.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\zh-cn.js" />
+    <Content Include="Content\Client\fullcalendar\core\locales\zh-tw.js" />
+    <Content Include="Content\Client\fullcalendar\core\main.css" />
+    <Content Include="Content\Client\fullcalendar\core\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\core\main.js" />
+    <Content Include="Content\Client\fullcalendar\core\main.min.css" />
+    <Content Include="Content\Client\fullcalendar\core\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\daygrid\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\daygrid\main.css" />
+    <Content Include="Content\Client\fullcalendar\daygrid\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\daygrid\main.js" />
+    <Content Include="Content\Client\fullcalendar\daygrid\main.min.css" />
+    <Content Include="Content\Client\fullcalendar\daygrid\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\main.js" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\interaction\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\interaction\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\interaction\main.js" />
+    <Content Include="Content\Client\fullcalendar\interaction\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\list\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\list\main.css" />
+    <Content Include="Content\Client\fullcalendar\list\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\list\main.js" />
+    <Content Include="Content\Client\fullcalendar\list\main.min.css" />
+    <Content Include="Content\Client\fullcalendar\list\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\luxon\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\luxon\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\luxon\main.js" />
+    <Content Include="Content\Client\fullcalendar\luxon\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\main.js" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\moment\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\moment\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\moment\main.js" />
+    <Content Include="Content\Client\fullcalendar\moment\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\rrule\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\rrule\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\rrule\main.js" />
+    <Content Include="Content\Client\fullcalendar\rrule\main.min.js" />
+    <Content Include="Content\Client\fullcalendar\timegrid\LICENSE.txt" />
+    <Content Include="Content\Client\fullcalendar\timegrid\main.css" />
+    <Content Include="Content\Client\fullcalendar\timegrid\main.esm.js" />
+    <Content Include="Content\Client\fullcalendar\timegrid\main.js" />
+    <Content Include="Content\Client\fullcalendar\timegrid\main.min.css" />
+    <Content Include="Content\Client\fullcalendar\timegrid\main.min.js" />
+    <Content Include="Content\Client\images\14.jpg" />
+    <Content Include="Content\Client\images\bg-03.jpg" />
+    <Content Include="Content\Client\images\booking\01.png" />
+    <Content Include="Content\Client\images\booking\02.jpg" />
+    <Content Include="Content\Client\images\booking\03.png" />
+    <Content Include="Content\Client\images\booking\cart.png" />
+    <Content Include="Content\Client\images\booking\seat.svg" />
+    <Content Include="Content\Client\images\error\01.png" />
+    <Content Include="Content\Client\images\error\02.png" />
+    <Content Include="Content\Client\images\error\03.png" />
+    <Content Include="Content\Client\images\favicon.ico" />
+    <Content Include="Content\Client\images\icon\entire-page.png" />
+    <Content Include="Content\Client\images\index.jpeg" />
+    <Content Include="Content\Client\images\loader.gif" />
+    <Content Include="Content\Client\images\login\1.png" />
+    <Content Include="Content\Client\images\login\2.jpg" />
+    <Content Include="Content\Client\images\login\mail.png" />
+    <Content Include="Content\Client\images\logo-1.png" />
+    <Content Include="Content\Client\images\logo-2.png" />
+    <Content Include="Content\Client\images\logo-dark.gif" />
+    <Content Include="Content\Client\images\logo-full.gif" />
+    <Content Include="Content\Client\images\logo-full.png" />
+    <Content Include="Content\Client\images\logo-full2.png" />
+    <Content Include="Content\Client\images\logo-white.png" />
+    <Content Include="Content\Client\images\logo-white1.png" />
+    <Content Include="Content\Client\images\logo.gif" />
+    <Content Include="Content\Client\images\page-img\01.jpg" />
+    <Content Include="Content\Client\images\page-img\01.png" />
+    <Content Include="Content\Client\images\page-img\02.jpg" />
+    <Content Include="Content\Client\images\page-img\03.jpg" />
+    <Content Include="Content\Client\images\page-img\04.png" />
+    <Content Include="Content\Client\images\page-img\05.png" />
+    <Content Include="Content\Client\images\page-img\06.png" />
+    <Content Include="Content\Client\images\page-img\07.jpg" />
+    <Content Include="Content\Client\images\page-img\08.jpg" />
+    <Content Include="Content\Client\images\page-img\09.jpg" />
+    <Content Include="Content\Client\images\page-img\10.jpg" />
+    <Content Include="Content\Client\images\page-img\100.jpg" />
+    <Content Include="Content\Client\images\page-img\11.jpg" />
+    <Content Include="Content\Client\images\page-img\12.jpg" />
+    <Content Include="Content\Client\images\page-img\13.jpg" />
+    <Content Include="Content\Client\images\page-img\14.jpg" />
+    <Content Include="Content\Client\images\page-img\15.jpg" />
+    <Content Include="Content\Client\images\page-img\16.jpg" />
+    <Content Include="Content\Client\images\page-img\17.jpg" />
+    <Content Include="Content\Client\images\page-img\18.jpg" />
+    <Content Include="Content\Client\images\page-img\19.jpg" />
+    <Content Include="Content\Client\images\page-img\20.jpg" />
+    <Content Include="Content\Client\images\page-img\21.jpg" />
+    <Content Include="Content\Client\images\page-img\22.jpg" />
+    <Content Include="Content\Client\images\page-img\23.jpg" />
+    <Content Include="Content\Client\images\page-img\24.jpg" />
+    <Content Include="Content\Client\images\page-img\25.jpg" />
+    <Content Include="Content\Client\images\page-img\26.jpg" />
+    <Content Include="Content\Client\images\page-img\27.jpg" />
+    <Content Include="Content\Client\images\page-img\28.jpg" />
+    <Content Include="Content\Client\images\page-img\29.png" />
+    <Content Include="Content\Client\images\page-img\30.png" />
+    <Content Include="Content\Client\images\page-img\31.png" />
+    <Content Include="Content\Client\images\page-img\32.png" />
+    <Content Include="Content\Client\images\page-img\33.png" />
+    <Content Include="Content\Client\images\page-img\34.png" />
+    <Content Include="Content\Client\images\page-img\35.png" />
+    <Content Include="Content\Client\images\page-img\36.png" />
+    <Content Include="Content\Client\images\page-img\37.png" />
+    <Content Include="Content\Client\images\page-img\38.png" />
+    <Content Include="Content\Client\images\page-img\39.png" />
+    <Content Include="Content\Client\images\page-img\40.png" />
+    <Content Include="Content\Client\images\page-img\41.png" />
+    <Content Include="Content\Client\images\page-img\42.jpg" />
+    <Content Include="Content\Client\images\page-img\43.jpg" />
+    <Content Include="Content\Client\images\page-img\44.jpg" />
+    <Content Include="Content\Client\images\page-img\45.jpg" />
+    <Content Include="Content\Client\images\page-img\46.jpg" />
+    <Content Include="Content\Client\images\page-img\47.jpg" />
+    <Content Include="Content\Client\images\page-img\48.jpg" />
+    <Content Include="Content\Client\images\page-img\49.jpg" />
+    <Content Include="Content\Client\images\page-img\car.png" />
+    <Content Include="Content\Client\images\page-img\g1.jpg" />
+    <Content Include="Content\Client\images\page-img\g2.jpg" />
+    <Content Include="Content\Client\images\page-img\g3.jpg" />
+    <Content Include="Content\Client\images\page-img\g4.jpg" />
+    <Content Include="Content\Client\images\page-img\g5.jpg" />
+    <Content Include="Content\Client\images\page-img\g6.jpg" />
+    <Content Include="Content\Client\images\page-img\g7.jpg" />
+    <Content Include="Content\Client\images\page-img\g8.jpg" />
+    <Content Include="Content\Client\images\page-img\g9.jpg" />
+    <Content Include="Content\Client\images\page-img\img-success.png" />
+    <Content Include="Content\Client\images\page-img\man.svg" />
+    <Content Include="Content\Client\images\page-img\p-2.jpg" />
+    <Content Include="Content\Client\images\page-img\p-3.jpg" />
+    <Content Include="Content\Client\images\page-img\p-4.jpg" />
+    <Content Include="Content\Client\images\page-img\p-5.jpg" />
+    <Content Include="Content\Client\images\page-img\p1.jpg" />
+    <Content Include="Content\Client\images\page-img\profile-bg.jpg" />
+    <Content Include="Content\Client\images\page-img\s1.jpg" />
+    <Content Include="Content\Client\images\page-img\s2.jpg" />
+    <Content Include="Content\Client\images\page-img\s3.jpg" />
+    <Content Include="Content\Client\images\page-img\scoter.png" />
+    <Content Include="Content\Client\images\page-img\tag_blue.svg" />
+    <Content Include="Content\Client\images\page-img\tag_red.svg" />
+    <Content Include="Content\Client\images\page-img\truck.png" />
+    <Content Include="Content\Client\images\pdf.svg" />
+    <Content Include="Content\Client\images\project-icon.png" />
+    <Content Include="Content\Client\images\screen.jpg" />
+    <Content Include="Content\Client\images\screen.png" />
+    <Content Include="Content\Client\images\small\04.svg" />
+    <Content Include="Content\Client\images\small\05.svg" />
+    <Content Include="Content\Client\images\small\flag-01.png" />
+    <Content Include="Content\Client\images\small\flag-02.png" />
+    <Content Include="Content\Client\images\small\flag-03.png" />
+    <Content Include="Content\Client\images\small\flag-04.png" />
+    <Content Include="Content\Client\images\small\flag-05.png" />
+    <Content Include="Content\Client\images\small\flag-06.png" />
+    <Content Include="Content\Client\images\small\img-1.jpg" />
+    <Content Include="Content\Client\images\small\jpg.svg" />
+    <Content Include="Content\Client\images\small\xml.svg" />
+    <Content Include="Content\Client\images\small\zip.svg" />
+    <Content Include="Content\Client\images\user\01.jpg" />
+    <Content Include="Content\Client\images\user\02.jpg" />
+    <Content Include="Content\Client\images\user\03.jpg" />
+    <Content Include="Content\Client\images\user\04.jpg" />
+    <Content Include="Content\Client\images\user\05.jpg" />
+    <Content Include="Content\Client\images\user\06.jpg" />
+    <Content Include="Content\Client\images\user\07.jpg" />
+    <Content Include="Content\Client\images\user\08.jpg" />
+    <Content Include="Content\Client\images\user\09.jpg" />
+    <Content Include="Content\Client\images\user\1.jpg" />
+    <Content Include="Content\Client\images\user\10.jpg" />
+    <Content Include="Content\Client\images\user\11.png" />
+    <Content Include="Content\Client\images\user\uder-5.jpg" />
+    <Content Include="Content\Client\images\user\user-1.jpg" />
+    <Content Include="Content\Client\images\user\user-2.jpg" />
+    <Content Include="Content\Client\images\user\user-3.jpg" />
+    <Content Include="Content\Client\images\user\user-4.jpg" />
+    <Content Include="Content\Client\images\user\user-5.jpg" />
+    <Content Include="Content\Client\images\user\user-6.jpg" />
+    <Content Include="Content\Client\js\algolia.js" />
+    <Content Include="Content\Client\js\algoliasearchLite.min.js" />
+    <Content Include="Content\Client\js\animated.js" />
+    <Content Include="Content\Client\js\apexcharts.js" />
+    <Content Include="Content\Client\js\bodymovin.js" />
+    <Content Include="Content\Client\js\bootstrap.min.js" />
+    <Content Include="Content\Client\js\chart-custom.js" />
+    <Content Include="Content\Client\js\chartist\chartist.css" />
+    <Content Include="Content\Client\js\chartist\chartist.js" />
+    <Content Include="Content\Client\js\chartist\chartist.min.css" />
+    <Content Include="Content\Client\js\chartist\chartist.min.js" />
+    <Content Include="Content\Client\js\charts.js" />
+    <Content Include="Content\Client\js\core.js" />
+    <Content Include="Content\Client\js\countdown.min.js" />
+    <Content Include="Content\Client\js\custom.js" />
+    <Content Include="Content\Client\js\customizer.js" />
+    <Content Include="Content\Client\js\highcharts-3d.js" />
+    <Content Include="Content\Client\js\highcharts-more.js" />
+    <Content Include="Content\Client\js\highcharts.js" />
+    <Content Include="Content\Client\js\instantsearch.js" />
+    <Content Include="Content\Client\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\Client\js\jquery.appear.js" />
+    <Content Include="Content\Client\js\jquery.counterup.min.js" />
+    <Content Include="Content\Client\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\Client\js\jquery.min.js" />
+    <Content Include="Content\Client\js\kelly.js" />
+    <Content Include="Content\Client\js\lottie.js" />
+    <Content Include="Content\Client\js\maps.js" />
+    <Content Include="Content\Client\js\morris.js" />
+    <Content Include="Content\Client\js\morris.min.js" />
+    <Content Include="Content\Client\js\owl.carousel.min.js" />
+    <Content Include="Content\Client\js\popper.min.js" />
+    <Content Include="Content\Client\js\progressbar.js" />
+    <Content Include="Content\Client\js\raphael-min.js" />
+    <Content Include="Content\Client\js\rtl.js" />
+    <Content Include="Content\Client\js\select2.min.js" />
+    <Content Include="Content\Client\js\slick.min.js" />
+    <Content Include="Content\Client\js\slider.js" />
+    <Content Include="Content\Client\js\smooth-scrollbar.js" />
+    <Content Include="Content\Client\js\swiper.min.js" />
+    <Content Include="Content\Client\js\waypoints.min.js" />
+    <Content Include="Content\Client\js\worldLow.js" />
+    <Content Include="Content\Client\js\wow.min.js" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
+    <Content Include="Data\Images\24.PNG" />
+    <Content Include="Data\Images\27.PNG" />
+    <Content Include="Data\Images\4.PNG" />
+    <Content Include="Data\Images\790d29ac20dc5fc7cd5c2a61cbddb9f7.png" />
+    <Content Include="Data\Images\monxao.jpg" />
+    <Content Include="Data\Images\tuan tran3.jpg" />
+    <Content Include="Data\Images\Đoàn trường 3.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\MonNgonTaiNha.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MonNgonTaiNha.Context.cs</LastGenOutput>
+      <DependentUpon>MonNgonTaiNha.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\MonNgonTaiNha.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MonNgonTaiNha.edmx</DependentUpon>
+      <LastGenOutput>MonNgonTaiNha.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\HomePage\Index.cshtml" />
+    <Content Include="Content\Admin\fonts\dripicons-v2.eot" />
+    <Content Include="Content\Admin\fonts\dripicons-v2.ttf" />
+    <Content Include="Content\Admin\fonts\dripicons-v2.woff" />
+    <Content Include="Content\Admin\fonts\fa-brands-400.eot" />
+    <Content Include="Content\Admin\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\Admin\fonts\fa-brands-400.woff" />
+    <Content Include="Content\Admin\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\Admin\fonts\fa-regular-400.eot" />
+    <Content Include="Content\Admin\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\Admin\fonts\fa-regular-400.woff" />
+    <Content Include="Content\Admin\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\Admin\fonts\fa-solid-900.eot" />
+    <Content Include="Content\Admin\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\Admin\fonts\fa-solid-900.woff" />
+    <Content Include="Content\Admin\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Admin\fonts\FontAwesome.otf" />
+    <Content Include="Content\Admin\fonts\ionicons.eot" />
+    <Content Include="Content\Admin\fonts\ionicons.ttf" />
+    <Content Include="Content\Admin\fonts\ionicons.woff" />
+    <Content Include="Content\Admin\fonts\la-brands-400.eot" />
+    <Content Include="Content\Admin\fonts\la-brands-400.ttf" />
+    <Content Include="Content\Admin\fonts\la-brands-400.woff" />
+    <Content Include="Content\Admin\fonts\la-brands-400.woff2" />
+    <Content Include="Content\Admin\fonts\la-regular-400.eot" />
+    <Content Include="Content\Admin\fonts\la-regular-400.ttf" />
+    <Content Include="Content\Admin\fonts\la-regular-400.woff" />
+    <Content Include="Content\Admin\fonts\la-regular-400.woff2" />
+    <Content Include="Content\Admin\fonts\la-solid-900.eot" />
+    <Content Include="Content\Admin\fonts\la-solid-900.ttf" />
+    <Content Include="Content\Admin\fonts\la-solid-900.woff" />
+    <Content Include="Content\Admin\fonts\la-solid-900.woff2" />
+    <Content Include="Content\Admin\fonts\remixicon.eot" />
+    <Content Include="Content\Admin\fonts\remixicon.ttf" />
+    <Content Include="Content\Admin\fonts\remixicon.woff" />
+    <Content Include="Content\Admin\fonts\remixicon.woff2" />
+    <Content Include="Content\Admin\fonts\slick.eot" />
+    <Content Include="Content\Admin\fonts\slick.ttf" />
+    <Content Include="Content\Admin\fonts\slick.woff" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\package.json" />
+    <Content Include="Content\Admin\fullcalendar\bootstrap\README.md" />
+    <Content Include="Content\Admin\fullcalendar\core\package.json" />
+    <Content Include="Content\Admin\fullcalendar\core\README.md" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\package.json" />
+    <Content Include="Content\Admin\fullcalendar\daygrid\README.md" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\package.json" />
+    <Content Include="Content\Admin\fullcalendar\google-calendar\README.md" />
+    <Content Include="Content\Admin\fullcalendar\interaction\package.json" />
+    <Content Include="Content\Admin\fullcalendar\interaction\README.md" />
+    <Content Include="Content\Admin\fullcalendar\list\package.json" />
+    <Content Include="Content\Admin\fullcalendar\list\README.md" />
+    <Content Include="Content\Admin\fullcalendar\luxon\package.json" />
+    <Content Include="Content\Admin\fullcalendar\luxon\README.md" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\package.json" />
+    <Content Include="Content\Admin\fullcalendar\moment-timezone\README.md" />
+    <Content Include="Content\Admin\fullcalendar\moment\package.json" />
+    <Content Include="Content\Admin\fullcalendar\moment\README.md" />
+    <Content Include="Content\Admin\fullcalendar\rrule\package.json" />
+    <Content Include="Content\Admin\fullcalendar\rrule\README.md" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\package.json" />
+    <Content Include="Content\Admin\fullcalendar\timegrid\README.md" />
+    <Content Include="Content\Admin\images\icon\expand-window.json" />
+    <Content Include="Content\Admin\images\icon\open-letter.json" />
+    <Content Include="Content\Admin\images\small\data.json" />
+    <Content Include="Content\Admin\images\small\data1.json" />
+    <Content Include="Content\Admin\images\small\data2.json" />
+    <Content Include="Content\Admin\images\small\match-code.json" />
+    <Content Include="Content\Admin\js\chartist\chartist.css.map" />
+    <Content Include="Content\Admin\js\chartist\chartist.min.js.map" />
+    <Content Include="Content\Admin\js\chartist\scss\chartist.scss" />
+    <Content Include="Content\Admin\js\chartist\scss\settings\_chartist-settings.scss" />
+    <Content Include="Areas\Admin\Views\BaiViet\DanhSachBaiViet.cshtml" />
+    <EntityDeploy Include="Models\MonNgonTaiNha.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MonNgonTaiNha.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MonNgonTaiNha.edmx.diagram">
+      <DependentUpon>MonNgonTaiNha.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\BaiViet\ThemMoi.cshtml" />
+    <Content Include="Areas\Admin\Views\BaiViet\CapNhat.cshtml" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
+    <Content Include="Areas\Admin\Views\DanhMuc\QuanLyDanhMuc.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\ThemMoi.cshtml" />
+    <Content Include="Areas\Admin\Views\DanhMuc\CapNhat.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\DanhSachNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\ThemNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\SuaNguoiDung.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDung\create.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\DangNhap.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\Dangki.cshtml" />
+    <Content Include="Areas\Client\Views\web.config" />
+    <Content Include="Areas\Client\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Client\Views\HomeClient\Index.cshtml" />
+    <Content Include="Content\Client\fonts\dripicons-v2.eot" />
+    <Content Include="Content\Client\fonts\dripicons-v2.ttf" />
+    <Content Include="Content\Client\fonts\dripicons-v2.woff" />
+    <Content Include="Content\Client\fonts\fa-brands-400.eot" />
+    <Content Include="Content\Client\fonts\fa-brands-400.ttf" />
+    <Content Include="Content\Client\fonts\fa-brands-400.woff" />
+    <Content Include="Content\Client\fonts\fa-brands-400.woff2" />
+    <Content Include="Content\Client\fonts\fa-regular-400.eot" />
+    <Content Include="Content\Client\fonts\fa-regular-400.ttf" />
+    <Content Include="Content\Client\fonts\fa-regular-400.woff" />
+    <Content Include="Content\Client\fonts\fa-regular-400.woff2" />
+    <Content Include="Content\Client\fonts\fa-solid-900.eot" />
+    <Content Include="Content\Client\fonts\fa-solid-900.ttf" />
+    <Content Include="Content\Client\fonts\fa-solid-900.woff" />
+    <Content Include="Content\Client\fonts\fa-solid-900.woff2" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Client\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Client\fonts\FontAwesome.otf" />
+    <Content Include="Content\Client\fonts\ionicons.eot" />
+    <Content Include="Content\Client\fonts\ionicons.ttf" />
+    <Content Include="Content\Client\fonts\ionicons.woff" />
+    <Content Include="Content\Client\fonts\la-brands-400.eot" />
+    <Content Include="Content\Client\fonts\la-brands-400.ttf" />
+    <Content Include="Content\Client\fonts\la-brands-400.woff" />
+    <Content Include="Content\Client\fonts\la-brands-400.woff2" />
+    <Content Include="Content\Client\fonts\la-regular-400.eot" />
+    <Content Include="Content\Client\fonts\la-regular-400.ttf" />
+    <Content Include="Content\Client\fonts\la-regular-400.woff" />
+    <Content Include="Content\Client\fonts\la-regular-400.woff2" />
+    <Content Include="Content\Client\fonts\la-solid-900.eot" />
+    <Content Include="Content\Client\fonts\la-solid-900.ttf" />
+    <Content Include="Content\Client\fonts\la-solid-900.woff" />
+    <Content Include="Content\Client\fonts\la-solid-900.woff2" />
+    <Content Include="Content\Client\fonts\remixicon.eot" />
+    <Content Include="Content\Client\fonts\remixicon.ttf" />
+    <Content Include="Content\Client\fonts\remixicon.woff" />
+    <Content Include="Content\Client\fonts\remixicon.woff2" />
+    <Content Include="Content\Client\fonts\slick.eot" />
+    <Content Include="Content\Client\fonts\slick.ttf" />
+    <Content Include="Content\Client\fonts\slick.woff" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\package.json" />
+    <Content Include="Content\Client\fullcalendar\bootstrap\README.md" />
+    <Content Include="Content\Client\fullcalendar\core\package.json" />
+    <Content Include="Content\Client\fullcalendar\core\README.md" />
+    <Content Include="Content\Client\fullcalendar\daygrid\package.json" />
+    <Content Include="Content\Client\fullcalendar\daygrid\README.md" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\package.json" />
+    <Content Include="Content\Client\fullcalendar\google-calendar\README.md" />
+    <Content Include="Content\Client\fullcalendar\interaction\package.json" />
+    <Content Include="Content\Client\fullcalendar\interaction\README.md" />
+    <Content Include="Content\Client\fullcalendar\list\package.json" />
+    <Content Include="Content\Client\fullcalendar\list\README.md" />
+    <Content Include="Content\Client\fullcalendar\luxon\package.json" />
+    <Content Include="Content\Client\fullcalendar\luxon\README.md" />
+    <Content Include="Content\Client\fullcalendar\moment\package.json" />
+    <Content Include="Content\Client\fullcalendar\moment\README.md" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\package.json" />
+    <Content Include="Content\Client\fullcalendar\moment-timezone\README.md" />
+    <Content Include="Content\Client\fullcalendar\rrule\package.json" />
+    <Content Include="Content\Client\fullcalendar\rrule\README.md" />
+    <Content Include="Content\Client\fullcalendar\timegrid\package.json" />
+    <Content Include="Content\Client\fullcalendar\timegrid\README.md" />
+    <Content Include="Content\Client\images\icon\expand-window.json" />
+    <Content Include="Content\Client\images\icon\open-letter.json" />
+    <Content Include="Content\Client\images\small\data.json" />
+    <Content Include="Content\Client\images\small\data1.json" />
+    <Content Include="Content\Client\images\small\data2.json" />
+    <Content Include="Content\Client\images\small\match-code.json" />
+    <Content Include="Content\Client\js\chartist\chartist.css.map" />
+    <Content Include="Content\Client\js\chartist\chartist.min.js.map" />
+    <Content Include="Content\Client\js\chartist\scss\chartist.scss" />
+    <Content Include="Content\Client\js\chartist\scss\settings\_chartist-settings.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Client\Data\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\bootstrap\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\core\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\daygrid\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\google-calendar\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\interaction\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\list\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\luxon\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\moment-timezone\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\moment\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\rrule\main.d.ts" />
+    <TypeScriptCompile Include="Content\Admin\fullcalendar\timegrid\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\bootstrap\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\core\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\daygrid\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\google-calendar\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\interaction\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\list\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\luxon\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\moment-timezone\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\moment\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\rrule\main.d.ts" />
+    <TypeScriptCompile Include="Content\Client\fullcalendar\timegrid\main.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44349/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

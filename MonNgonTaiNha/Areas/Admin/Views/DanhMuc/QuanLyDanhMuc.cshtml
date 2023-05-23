@@ -1,0 +1,78 @@
+﻿@model List<MonNgonTaiNha.Models.DANHMUC>
+@{
+    ViewBag.Title = "QuanLyDanhMuc";
+}
+<div class="col-sm-12">
+    <div class="iq-card">
+        <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+                <h4 class="card-title">Danh Sách Danh Mục</h4>
+            </div>
+        </div>
+        <div class="iq-card-body">
+            <div class="row justify-content-between">
+                <div class="col-sm-12 col-md-6">
+                    <div id="user_list_datatable_info" class="dataTables_filter">
+                        <form class="mr-3 position-relative">
+                            <div class="form-group mb-0">
+                                <input type="search" class="form-control" id="exampleInputSearch" placeholder="Search" aria-controls="user-list-table">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="user-list-files d-flex float-right">
+                        <a class="iq-bg-primary" href="/Admin/DanhMuc/ThemMoi">
+                            Add
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Model == null)
+    {
+        <div class="iq-card">
+            <div class="iq-card-body">
+                <div class="ckeckout-product-lists">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h2>Sản phẩm không tồn tại</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="iq-card">
+                <div class="iq-card-body">
+                    <div class="ckeckout-product-lists">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <div class="ckeckout-product">
+                                    <img src="~/Data/images/@item.anh" alt="checkout-product" style="width:150px ; height:150px">
+                                </div>
+                                <div class="checkout-product-details ml-3 pl-3">
+                                    <h5>@item.tenDanhMuc</h5>
+                                    <p class="text-success">@item.moTa</p>
+                                </div>
+                            </div>
+                            <div class="checkout-amount-data text-center">
+                                <div class="d-flex justify-content-between">
+                                    <div class="checkout-policy">
+                                        <div class="flex align-items-center list-user-action">
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/Admin/DanhMuc/CapNhat?id=@item.idDanhMuc"><i class="ri-pencil-line"></i></a>
+                                            <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" href="#" onclick="if (confirm('Bạn có muốn xoá không?') == true) { location.href ='/Admin/DanhMuc/Xoa?id=@item.idDanhMuc'}"><i class="ri-delete-bin-line"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>

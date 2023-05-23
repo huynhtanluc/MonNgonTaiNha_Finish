@@ -1,0 +1,46 @@
+﻿@model MonNgonTaiNha.Models.DANHMUC
+
+@{
+    ViewBag.Title = "CapNhat";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.idDanhMuc)
+    <div class="iq-card">
+        <div class="iq-card-header d-flex justify-content-between">
+            <div class="iq-header-title">
+                <h4 class="card-title">Update</h4>
+            </div>
+        </div>
+        <div class="iq-card-body">
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputPlaceholder">@Html.LabelFor(model => model.tenDanhMuc, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                    @Html.EditorFor(model => model.tenDanhMuc, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.tenDanhMuc, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPlaceholder">@Html.LabelFor(model => model.moTa, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                    @Html.EditorFor(model => model.moTa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.moTa, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPlaceholder">@Html.LabelFor(model => model.anh, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                    @Html.EditorFor(model => model.anh, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.anh, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Chọn Ảnh</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn iq-bg-danger">@Html.ActionLink("Back", "QuanLyDanhMuc")</button>
+            </form>
+        </div>
+    </div>
+}
+

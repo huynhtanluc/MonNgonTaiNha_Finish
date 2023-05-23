@@ -1,0 +1,135 @@
+﻿@model List<MonNgonTaiNha.Models.NGUOIDUNG>
+
+@{
+    ViewBag.Title = "DanhSachNguoiDung";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="iq-card">
+                <div class="iq-card-header d-flex justify-content-between">
+                    <div class="iq-header-title">
+                        <h4 class="card-title">Danh sách người dùng</h4>
+                    </div>
+                </div>
+
+                <div class="iq-card-body">
+                    <div class="row justify-content-between">
+                        <div class="col-sm-12 col-md-6">
+                            <div id="user_list_datatable_info" class="dataTables_filter">
+                                <form class="mr-3 position-relative" method="post" onsubmit="redirectToURL(event)">
+                                    <div class="form-group mb-0">
+                                        <input type="search" name="search-input" class="form-control" id="exampleInputSearch" placeholder="Tìm kiếm" aria-controls="user-list-table">
+                                        <div>
+                                            <div class="user-list-files d-flex float-left">
+                                                <input style="border:none; margin-top:20px; border-radius: 5px" type="submit" class="iq-bg-primary" value="Tìm kiếm">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="table" class="table-editable">
+                        <span class="table-add float-right mb-3 mr-2">
+                            <button class="btn btn-sm iq-bg-success">
+                                <a href="/Admin/NguoiDung/ThemNguoiDung"><i class="ri-add-fill"><span class="pl-1">Thêm mới</span></i></a>
+                            </button>
+                        </span>
+                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                            <thead>
+                                <tr>
+                                    <th>Ảnh đại diện</th>
+                                    <th>Id</th>
+                                    <th>Tên đăng nhập</th>
+                                    <th>Mật khẩu</th>
+                                    <th>Họ Tên</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Số CMND</th>
+                                    <th>Quyền</th>
+                                    <th>Số xu</th>
+                                    <th>Số tài khoản</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center"><img class="rounded-circle img-fluid avatar-40" src="@item.anhDaiDien" alt="profile"></td>
+                                        <td>@item.idNguoiDung</td>
+                                        <td>@item.tenDangNhap</td>
+                                        <td>@item.matKhau</td>
+                                        <td>@item.hoTen</td>
+                                        <td>@item.ngaySinh.Value.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.diaChi</td>
+                                        <td>@item.soCMND</td>
+                                        <td>@item.QUYENTRUYCAP.tenQuyen</td>
+                                        <td>@item.soXu</td>
+                                        <td>@item.soTaiKhoan  - @item.TAIKHOANNGANHANG.tenNganHang</td>
+
+                                        <td>
+                                            <div class="flex align-items-center list-user-action">
+                                                <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" href="/Admin/NguoiDung/SuaNguoiDung?id=@item.idNguoiDung"><i class="ri-pencil-line"></i></a>
+                                                <a onclick="if (confirm('Bạn có muốn xóa tài khoản này không?') == true) {location.href='/Admin/NguoiDung/XoaNguoiDung?id=@item.idNguoiDung' }" class="iq-bg-primary" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="ri-delete-bin-line"></i></a>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="row justify-content-between mt-3">
+                        <div id="user-list-page-info" class="col-md-6">
+                            <span>Showing 1 to 5 of 5 entries</span>
+                        </div>
+                        <div class="col-md-6">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-end mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function redirectToURL(event) {
+        event.preventDefault(); // Ngăn chặn hành vi gửi form mặc định
+
+        // Lấy giá trị input field
+        var myInputValue = document.getElementsByName("search-input")[0].value;
+
+        // Tạo URL mà bạn muốn chuyển hướng đến
+        var url = "/Admin/NguoiDung/DanhSachNguoiDung?keyWord=" + encodeURIComponent(myInputValue);
+
+        // Chuyển hướng đến URL
+        window.location.href = url;
+    }
+</script>
